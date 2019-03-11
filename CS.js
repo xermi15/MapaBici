@@ -2,6 +2,8 @@ $( document ).ready(agafaBicis());
 setInterval(agafaBicis, 10000);
 // window.onload(agafaBicis());
 
+var mymap = L.map('map').setView([51.505, -0.09], 5);
+
 
 function agafaBicis() {
   var json = $.getJSON("https://cors.io/?http://wservice.viabicing.cat/v2/stations", function(data){
@@ -21,6 +23,7 @@ function agafaBicis() {
         bicisE += parseInt(data.stations[i].bikes);
         stationsE++;
       }
+      var marker = L.marker([data.stations[i].latitude,data.stations[i].longitude]).addTo(mymap);
     }
 
     $('#all').append( "<h3>Nova actualitzacio " + data.updateTime + "</h3>" +
