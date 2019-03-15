@@ -2,7 +2,14 @@ $( document ).ready(agafaBicis());
 setInterval(agafaBicis, 10000);
 // window.onload(agafaBicis());
 
-var mymap = L.map('mapid').setView([51.505, -0.09], 5);
+var mymap = L.map('map').setView([41.3979064, 2.1531522], 12.4);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoieGVybWkxNSIsImEiOiJjanRhZjVvcnowYTlqNDNvMzZtczc4eHVwIn0.qMvwEdGoItzyJEB7bQ-Ghg', {
+	maxZoom: 18,
+	attribution: 'el xermi15 y el aaroon9',
+	id: 'mapbox.streets'
+}).addTo(mymap);
+
 
 
 function agafaBicis() {
