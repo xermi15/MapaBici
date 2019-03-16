@@ -1,4 +1,16 @@
 #map {
   height: 550px;
-  width: 800px;
+}
+
+#donutchart {
+  height: 550px;
+}
+
+
+body {
+  padding: 1rem 1rem;
+}
+
+div {
+  padding: 1rem 1rem;
 }
