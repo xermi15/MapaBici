@@ -1,7 +1,8 @@
-
 var temps = 3000;
 var idOld = "";
 
+guardarTempsModal = document.getElementById('guardarModalRefresc');
+guardarTempsModal.addEventListener('click', setTime);
 
 //Funcions que s'executen despres de que el document estigui carregat, printen el interval i
 //es fa la trucada a la funcio per la teticio JSON
@@ -12,15 +13,24 @@ $( document ).ready(function() {
 //$( document ).ready(agafaBicis());
 var jsonAction = setInterval(agafaBicis, temps);
 
-function restartAction(){
+function restartAction() {
 	var jsonAction = setInterval(agafaBicis, temps);
 		$('#freqActu').html((temps/1000));
+		console.log("resume");
 }
 
-
-function stopAction(){
+// Esto no va muy fino
+function stopAction() {
 	clearInterval(jsonAction);
-	 $('#freqActu').html(0);
+	$('#freqActu').html(0);
+	console.log("stop");
+}
+
+function setTime() {
+	tempsRefresc = document.getElementById('modalRefrescTemps').value;
+	temps = tempsRefresc * 1000;
+	$('#freqActu').html((temps/1000));
+	console.log("nou temps de refresc" + temps)
 }
 
 //Carga del mapa en el seu div amb valor prefefinits
@@ -68,8 +78,8 @@ function agafaBicis() {
 }
 
 //Funcio per obrir i tancar el modal
-//NO FUNCIONA DICE QUE NO ES UNA FUNCION EL .MODAL('SHOW').
-$('#setInterval').click(obrirModalEmail);
-function obrirModalEmail() {
-  $('#modalEmail').modal('show');
-}
+// No fa falta, el propi bootstrap ja porta integrades les funcions jquery
+// $('#setInterval').click(obrirModalEmail);
+// function obrirModalEmail() {
+//   $('#modalEmail').modal('show');
+// }

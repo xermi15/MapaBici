@@ -12,43 +12,45 @@
 		<link rel="stylesheet" href="CS.css">
 	</head>
 	<body id="all">
-				<div class="modal fade" id="modalEmail" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="modal1Label">Formulari de creació</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
+
+			<div>
+				Freqüencia d'actualitzacio actual: <span id="freqActu"></span>
+				<button type="button" id="setInterval" name="button" data-toggle="modal" data-target="#modalRefresc">Modificar Velocitat</button>
+				<button type="button" id="stop" name="button" onclick="stopAction()">Stop</button>
+				<button type="button" id="start" name="button" onclick="restartAction()">Reanudar</button>
+			</div>
+
+			<br>
+
+			<div id="map"></div>
+
+			<!-- modal -->
+			<div class="modal fade" id="modalRefresc" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modal1Label">Canvi temps de refresc</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="modalRefrescTemps">Introdueix el temps de refresc:</label>
+								<input type="number" class="form-control" id="modalRefrescTemps" placeholder="Label">
 							</div>
-							<div class="modal-body">
-								<div class="form-group">
-									<label for="modal1InputLabel">Introdueix el label del camp:</label>
-									<input type="text" class="form-control" id="modal1InputLabel" placeholder="Label">
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="requiredEmail">
-									<label class="form-check-label" for="defaultCheck1">
-										Camp Obligatori
-									</label>
-								</div>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Tanca</button>
-								<button type="button" class="btn btn-primary" id="guardarModalEmail">Guarda</button>
-							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Tanca</button>
+							<button type="button" class="btn btn-primary" id="guardarModalRefresc" data-dismiss="modal">Guarda</button>
 						</div>
 					</div>
 				</div>
-			<div>
-				Freqüencia d'actualitzacio actual: <span id="freqActu"></span>
-				<button type="button" id="setInterval" name="button">Modificar Velocitat</button>
-				<button type="button" id="stop" name="button" onclick="stopAction()">Stop</button>
-				<button type="button" id="start" name="button" onclick="restartAction()">Reanudar</button>
-
 			</div>
-			<div id="map"></div>
 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="CS.js"></script>
 	</body>
